@@ -26,10 +26,12 @@
 
 def palindrome?(str)
   # YOUR CODE HERE
+  return true if (str.split(%r{[^a-zA-Z]}).join.downcase <=> str.split(%r{[^a-zA-Z]}).join.downcase.reverse) == 0
 end
 
 def count_words(str)
   # YOUR CODE HERE
+  str.split.size
 end
 
 
