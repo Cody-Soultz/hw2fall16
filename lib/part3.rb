@@ -1,13 +1,13 @@
 class Dessert
 
-  def initialize(name, calories)
-    # YOUR CODE HERE
-    @name=name
-    @calories=calories
-  end
-  
   attr_accessor :name
   attr_accessor :calories
+
+  def initialize(name, calories)
+    # YOUR CODE HERE
+    self.name=name
+    self.calories=calories
+  end
   
   def healthy?
     # YOUR CODE HERE
@@ -21,13 +21,14 @@ class Dessert
 end
 
 class JellyBean < Dessert
-  def initialize(name, calories, flavor)
-    # YOUR CODE HERE
-    super(name, calories)
-    @flavor=flavor
-  end
   
   attr_accessor :flavor
+  
+  def initialize(name, calories, flavor)
+    # YOUR CODE HERE
+    super(name,calories)
+    self.flavor=flavor
+  end
   
   def delicious?
     # YOUR CODE HERE
