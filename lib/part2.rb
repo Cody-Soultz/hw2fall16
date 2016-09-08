@@ -15,16 +15,18 @@ end
 
 def rps_tournament_winner(tournament)
   # YOUR CODE HERE
-  puts "Start of function: " + tournament.to_s
-  return rps_game_winner(tournament) if tournament[0][0][0].length == 1 # base case
-  if tournament[0][0].length != 1
-    puts "Run rps_tournament_winner on first half: " + tournament[0].to_s
-    tournament[0] = rps_tournament_winner(tournament[0])
-    puts "Run rps_tournament_winner on second half: " + tournament[1].to_s
-    tournament[1] = rps_tournament_winner(tournament[1])
-    puts "Pass back through: " + tournament.to_s
-    rps_tournament_winner(tournament)
-  else
-    return tournament
+  begin
+    return rps_game_winner(tournament) if tournament[0][0][0].length == 1 # base case
+    if tournament[0][0].length != 1
+      tournament[0] = rps_tournament_winner(tournament[0])
+      tournament[1] = rps_tournament_winner(tournament[1])
+      rps_tournament_winner(tournament)
+    else
+      return tournament
+    end
+  rescue
+    puts "Either the tournament was null or not formated correctly"
+    puts "Please use the format [[\"name\",\"r|p|s\"]]"
+    puts "Also make sure to have more than one player"
   end
 end
