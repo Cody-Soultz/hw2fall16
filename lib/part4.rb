@@ -13,7 +13,6 @@ class Class
       end
       
       def #{attr_name}=(new_attr_value)
-        @#{attr_name}_history ||=Array.new(1)
         @#{attr_name}_history << new_attr_value
         @#{attr_name} = new_attr_value
       end"
