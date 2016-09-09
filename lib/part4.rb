@@ -19,13 +19,3 @@ class Class
       end"
   end
 end
-
-class Foo
-  def initialize
-    @myVar=1
-    puts "In Foo initialize"
-  end
-  attr_accessor :myVar
-  attr_accessor_with_history :bar
-  attr_accessor_with_history :quz
-end
